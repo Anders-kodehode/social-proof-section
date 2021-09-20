@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+    /* Primary Colors */
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    /* Neutral Colors */
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--white);
+    background: url(./images/bg-pattern-top-desktop.svg) left top no-repeat,
+    url(./images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.container,
+.info,
+.rating,
+.rating .rating-content,
+.review-content,
+.review-images,
+.review-top {
+    display: flex;
+}
+
+/* Title & Lead */
+
+.container {
+    flex-wrap: wrap;
+    margin: 5rem 7rem 5rem 7rem;
+    max-width: 1450px;
+}
+
+.info {
+    width: 50%;
+    flex-direction: column;
+}
+
+.info .title {
+    color: var(--very-dark-magenta);
+    width: 80%;
+    margin-bottom: .8rem;
+    line-height: 1;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.info .lead {
+    color: var(--dark-grayish-magenta);
+    width: 85%;
+    font-weight: 500;
+}
+
+/* Ratings */
+
+.rating {
+    flex-direction: column;
+    box-sizing: inherit;
+    align-items: center;
+    width: 50%;
+    }
+
+    .rating > div:nth-child(2) {
+        transform: translatex(10%);
+    }
+
+    .rating > div:nth-child(3) {
+        transform: translatex(20%);
+}
+
+.rating .rating-content {
+    background: var(--light-grayish-magenta);
+    margin: .5rem;
+    padding: 1rem 1.3rem;
+    width: 75%;
+    border-radius: .5rem;
+}
+
+.rating .rating-stars {
+    margin: 0 1rem 0 0;
+}
+
+.rating .rating-stars img {
+    width: .9rem;
+}
+
+.rating .rating-text {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+/* Reviews */
+
+.review {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 4rem 0;
+    width: 100%;
+    gap: 30px;
+    }
+
+    .review > div:nth-child(2) {
+        transform: translateY(5%);
+    }
+    .review > div:nth-child(3) {
+        transform: translateY(10%);
+}
+
+.review-content {
+    flex-wrap: wrap;
+    background: var(--very-dark-magenta);
+    color: var(--white);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.review-content p {
+    margin: 0 1.5rem 1.5rem;
+}
+
+.review-images {
+    align-content: center;
+    justify-content: center;
+    margin: 1.5rem 1rem 1rem 1.5rem;
+    width: 50px;
+    height: 50px;
+}
+
+.review-images img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.review-top {
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+}
+
+.review-top .name {
+    color: var(--white);
+    margin-top: 23px;
+    margin-left: -4px;
+    font-weight: 700;
+}
+
+.review-top .status {
+    color: var(--soft-pink);
+    margin-top: -25px;
+    margin-left: -4px;
+}
+
+/* Footer */
+
+.attribution {
+    text-align: center;
+    font-size: 11px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 864px) {
+    .container,
+    .container > * {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .container {
+        margin: 1rem 1rem !important;
+    }
+    .info,
+    .rating,
+    .review {
+        margin: 1.5rem auto !important;
+        width: 100%;
+    }
+    .info > *,
+    .rating > *,
+    .review > * {
+        width: 100% !important;
+    }
+    .info {
+        text-align: center;
+    }
+    .info .title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    .rating .rating-content {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .rating > .rating-content:nth-child(2) {
+        transform: translateY(0);
+    }
+    .rating > .rating-content:nth-child(3) {
+        transform: translateY(0);
+    }
+    .rating .rating-stars {
+        margin-right: 0;
+        margin-bottom: .5rem;
+    }
+    .review {
+        gap: 5px;
+    }
+    .review-top {
+        margin: 1.5rem 0 1rem;
+        padding: 0 1rem;
+        height: auto;
+    }
+}
